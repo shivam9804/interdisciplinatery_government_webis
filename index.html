@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Css for index.html -->
+    <link rel="stylesheet" href="./style/style.css">
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- stylesheet for entry form -->
+    <link rel="stylesheet" href="./government_forms/entry_form.css">
+
+    <!-- stylesheet for distribute form -->
+    <link rel="stylesheet" href="./government_forms/distribute_form.css">
+
+    <!-- fontawesome -->
+    <link rel="icon" href="data:,">
+    <script src="https://kit.fontawesome.com/d592a42550.js" crossorigin="anonymous"></script>
+
+    <title>Inventory Management</title>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <ul>
+            <li id="dashboard"><a href="#"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+            <li id="entry" onclick="get_entry_form()" ><a href="#"><i class="fas fa-plus-square"></i>Entry</a></li>
+            <li id="distribute" onclick="get_distribute_form()"><a href="#"><i class="fas fa-paper-plane"></i>Distribute</a></li>
+            <li id="entry_transaction"><a href="#"><i class="fas fa-clipboard"></i>Entry Transaction</a></li>
+            <li id="distribute_transaction"><a href="#"><i class="fas fa-clipboard"></i>Distribute Transaction</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="header">Welcome</div>
+    </div>
+</div>
+
+<div id="form1"></div>
+
+<script>
+    function get_entry_form(){
+        const xhr = new XMLHttpRequest();
+        const container = document.getElementById("form1");
+
+        xhr.onload = function(){
+            if (this.status === 200){
+                container.innerHTML = xhr.responseText;
+            }else{
+                console.warn('Did nit recive the form');
+            }
+        };
+
+        xhr.open('get','./government_forms/entry_form.html');
+        xhr.send();
+    }
+
+    function get_distribute_form(){
+        const xhr = new XMLHttpRequest();
+        const container = document.getElementById("form1");
+
+        xhr.onload = function(){
+            if (this.status === 200){
+                container.innerHTML = xhr.responseText;
+            }else{
+                console.warn('Did nit recive the form');
+            }
+        };
+
+        xhr.open('get','./government_forms/distribute_form.html');
+        xhr.send();
+    }
+</script>
+
+</body>
+</html>

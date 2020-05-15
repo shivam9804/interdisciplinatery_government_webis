@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- stylesheet -->
+    <!-- <link rel="stylesheet" href="entry_form.css"> -->
+
+    <!-- fontawesome -->
+    <link rel="icon" href="data:,">
+    <script src="https://kit.fontawesome.com/d592a42550.js" crossorigin="anonymous"></script>
+     
+    <title>Entry Form</title>
+</head>
+<body>
+
+<form class="box" id="entry_form" enctype="multipart/form-data">
+    <h1>Enter data to add to inventory</h1>
+    <label for="list">Choose the product</label>
+    <!-- <select id='list' onchange="getSelectedValue()" name="product" value="product"> -->
+    <select id='list' name="product">
+        <option value="null">Select the product</option>
+        <option value="rice">Rice</option>
+        <option value="dal">Dal</option>
+        <option value="wheat">Wheat</option>
+    </select>
+    <br>
+    <label for="quantity">Enter the quantity</label>
+    <input id="quantity" type="text" name="quantity">
+    <br>
+    <input onclick="send_data()" type="submit" value="Update">
+</form>
+
+<script>
+
+function send_data(){
+    var form1 = document.getElementById("entry_form");
+    var data = new FormData(form1);
+
+    $.ajax({
+        type: 'POST',
+        url: 'php_form/government_entry_form.php',
+        data: data,
+        processData: false,
+        contentType: false,
+        success: function(data, status){
+            console.log(data);
+        }
+    })
+
+    /* var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'php_form/government_entry_form.php', true);
+    xhr.onload = function(){
+        console.log(this.responseText);
+    };
+    xhr.send(data); */
+}
+
+</script>
+
+<!-- <script>
+    function getSelectedValue() {
+        var selectedValue = document.getElementById("list").value;
+        console.log(selectedValue);
+    }
+</script>
+ -->
+
+</body>
+</html>
+
+php_form/government_distribute_form.php

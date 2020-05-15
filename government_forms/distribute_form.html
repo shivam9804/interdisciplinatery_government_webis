@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- stylesheet -->
+    <!-- <link rel="stylesheet" href="distribute_form.css"> -->
+
+    <!-- fontawesome -->
+    <link rel="icon" href="data:,">
+    <script src="https://kit.fontawesome.com/d592a42550.js" crossorigin="anonymous"></script>
+     
+    <title>Distribute_form</title>
+</head>
+<body>
+
+<form class="box1" action="government_distribute_form.php" method="POST">
+    <h1 id="h1_1">Enter data to send to warehouse</h1>
+    <br>
+    <label for="warehouse">Enter warehouse id</label>
+    <input id="warehouse" type="text" name="">
+    <br>
+    <label for="list1">Choose the product</label>
+    <select id='list1' onchange="getSelectedValue()">
+        <option value="null">Select the product</option>
+        <option value="rice">Rice</option>
+        <option value="dal">Dal</option>
+        <option value="wheat">Wheat</option>
+    </select>
+    <br>
+    <label for="quantity1">Enter the quantity</label>
+    <input id="quantity1" type="number" name="">
+    <br>
+    <input id="submit1" type="submit" value="Update">
+</form>
+    
+</form>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box1{
+    padding: 0;
+    width: 600px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 35%;
+    margin-top: 16%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+#h1_1{
+    margin-left: 50px;
+}
+
+form label{
+    margin-left: 110px;
+}
+
+#warehouse{
+    margin-top: 20px;
+    margin-left: 25px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#list1{
+    margin-top: 20px;
+    margin-left: 23px;
+    height: 25px;
+    border-radius: 5px;
+    background: #4b4276;
+    color: white;
+}
+
+#quantity1{
+    margin-top: 20px;
+    margin-left: 35px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#submit1{
+    width: 80px;
+    height: 30px;
+    background: #4b4276;
+    border-radius: 5px;
+    color: white;
+    margin-left: 500px;
+    margin-top: 60px;
+}
